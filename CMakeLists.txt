@@ -31,7 +31,6 @@ set_property(TARGET objlib PROPERTY POSITION_INDEPENDENT_CODE 1)
 add_library(ffi_static STATIC $<TARGET_OBJECTS:objlib>)
 
 if(MSVC)
-    add_definitions(-DFFI_BUILDING_DLL)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 elseif(CMAKE_SYSTEM_NAME MATCHES Darwin)
     set(CMAKE_MACOSX_RPATH 1)
